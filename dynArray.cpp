@@ -46,7 +46,7 @@ int main()
 		if(val == -1) break;
 		if(counter >= size)
 		{
-			resize_array(dynArray, size);
+			dynArray = resize_array(dynArray, size);
 			/*****
 			int *temp = new int[size+1];
 			for(int j = 0; j < size; j++) temp[j] = dynArray[j]; //temp = dynArray;
