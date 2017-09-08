@@ -47,16 +47,6 @@ int main()
 		if(counter >= size)
 		{
 			dynArray = resize_array(dynArray, size);
-			/*****
-			int *temp = new int[size+1];
-			for(int j = 0; j < size; j++) temp[j] = dynArray[j]; //temp = dynArray;
-			delete[] dynArray;
-			//std::cout << "removed array" << endl;
-			int *dynArray = new int[size+1]; //temp;
-			for(int j = 0; j < size+1; j++) dynArray[j] = temp[j];
-			delete[] temp;
-			std::cout << "copied over temp to new array, removed temp" << endl;
-			*****/
 			size++;
 		}
 		dynArray[counter] = val;
