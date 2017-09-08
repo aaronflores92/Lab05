@@ -15,6 +15,20 @@
 
 using namespace std;
 
+int* resize_array(int array[], int size)
+{
+	int *temp = new int[size+1];
+	for(int j = 0; j < size; j++) temp[j] = array[j];
+	delete[] array;
+	
+	int *newArray = new int[size+1];
+	for(int j = 0; j < size+1; j++) newArray[j] = temp[j];
+	delete[] temp;
+	
+	std::cout << "copied over temp to new array, removed temp" << endl;
+	return newArray;
+}
+
 int main()
 {
 	int size = 0;
@@ -32,6 +46,8 @@ int main()
 		if(val == -1) break;
 		if(counter >= size)
 		{
+			dynArray = resize_array(dynArray, size);
+			/*****
 			int *temp = new int[size+1];
 			for(int j = 0; j < size; j++) temp[j] = dynArray[j]; //temp = dynArray;
 			delete[] dynArray;
@@ -40,12 +56,14 @@ int main()
 			for(int j = 0; j < size+1; j++) dynArray[j] = temp[j];
 			delete[] temp;
 			std::cout << "copied over temp to new array, removed temp" << endl;
+			*****/
 			size++;
 		}
 		dynArray[counter] = val;
 		counter++;
 	}
 	
+	std::cout << "Printing new array: " << endl;
 	for(counter = 0; counter < size; counter++) std::cout << dynArray[counter] << endl;
 	
 	return 0;
